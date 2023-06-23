@@ -5,9 +5,19 @@
 
 body {
     background-color: #f5f5db;
+
+
 }
 .container {
     padding: 5px;
+border: black 10px dashed;
+
+display: flex;
+align-items: center;
+flex-direction: row; 
+
+justify-content: space-around;
+flex-wrap: wrap
 }
 
 
