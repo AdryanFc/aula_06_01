@@ -1,0 +1,29 @@
+
+// Função para converter entropia em dias
+function entropiaParaDias(entropia) {
+  return Math.floor(entropia / 14.4); // Assumindo 14.4 bits por dia
+}
+
+// Função para concatenar texto e números com formatação
+function formataTextoComNumero(texto, numero) {
+  return `${texto}: ${numero}`;
+}
+
+// Função classificaSenha corrigida
+function classificaSenha(entropia) {
+  const dias = entropiaParaDias(entropia);
+  const classificacao =
+    dias >= 365 ? "Extremamente Forte" :
+    dias >= 180 ? "Muito Forte" :
+    dias >= 90 ? "Forte" :
+    "Média";
+  return formataTextoComNumero("Classificação:", classificacao);
+}
+
+// Avaliação e comparação com outros geradores de senha
+// (Adicione seu código de avaliação aqui)
+
+// Exemplo de uso
+const entropiaDaSenha = 223.54;
+console.log(formataTextoComNumero("Entropia (dias):", entropiaParaDias(entropiaDaSenha)));
+console.log(classificaSenha(entropiaDaSenha));
